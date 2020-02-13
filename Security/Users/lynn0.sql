@@ -1,0 +1,3 @@
+﻿CREATE USER [lynn0]
+  WITHOUT LOGIN
+GO

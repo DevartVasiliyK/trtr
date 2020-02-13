@@ -1,0 +1,3 @@
+﻿CREATE USER [tsvi0]
+  WITHOUT LOGIN
+GO

@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[SUPPLY2] (
+  [supplyID] [int] NOT NULL,
+  [supplier] [char](50) NULL,
+  CONSTRAINT [PK__SUPPLY2__EF30F8A095F04CCC] PRIMARY KEY CLUSTERED ([supplyID]),
+  CONSTRAINT [CK__SUPPLY2__supplyI__04EFA97D] CHECK ([supplyID]>=(151) AND [supplyID]<=(300))
+)
+ON [PRIMARY]
+GO

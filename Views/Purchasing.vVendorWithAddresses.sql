@@ -1,0 +1,29 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS ON
+GO
+
+CREATE VIEW [Purchasing].[vVendorWithAddresses] AS 
+SELECT 
+    v.[BusinessEntityID]
+    ,v.[Name]
+    ,at.[Name] AS [AddressType]
+    ,a.[AddressLine1] 
+    ,a.[AddressLine2] 
+    ,a.[City] 
+    ,sp.[Name] AS [StateProvinceName] 
+    ,a.[PostalCode] 
+    ,cr.[Name] AS [CountryRegionName] 
+FROM [Purchasing].[Vendor] v
+    INNER JOIN [Person].[BusinessEntityAddress] bea 
+    ON bea.[BusinessEntityID] = v.[BusinessEntityID] 
+    INNER JOIN [Person].[Address] a 
+    ON a.[AddressID] = bea.[AddressID]
+    INNER JOIN [Person].[StateProvince] sp 
+    ON sp.[StateProvinceID] = a.[StateProvinceID]
+    INNER JOIN [Person].[CountryRegion] cr 
+    ON cr.[CountryRegionCode] = sp.[CountryRegionCode]
+    INNER JOIN [Person].[AddressType] at 
+    ON at.[AddressTypeID] = bea.[AddressTypeID];
+GO
+
+EXEC sys.sp_addextendedproperty N'MS_Description', N'Vendor (company) names and addresses .', 'SCHEMA', N'Purchasing', 'VIEW', N'vVendorWithAddresses'
+GO

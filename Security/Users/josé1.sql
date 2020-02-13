@@ -1,0 +1,3 @@
+﻿CREATE USER [josé1]
+  WITHOUT LOGIN
+GO

@@ -1,0 +1,3 @@
+﻿CREATE USER [amy0]
+  WITHOUT LOGIN
+GO

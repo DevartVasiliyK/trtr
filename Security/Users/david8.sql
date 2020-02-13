@@ -1,0 +1,3 @@
+﻿CREATE USER [david8]
+  WITHOUT LOGIN
+GO
