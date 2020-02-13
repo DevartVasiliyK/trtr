@@ -1,0 +1,7 @@
+﻿SET QUOTED_IDENTIFIER, ANSI_NULLS OFF
+GO
+CREATE PROCEDURE [dbo].[sp_for_encryption]
+WITH ENCRYPTION
+AS
+SELECT * FROM table_for_encryption
+GO
